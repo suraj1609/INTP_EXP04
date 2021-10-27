@@ -1,0 +1,121 @@
+<html>
+<head>
+    <meta charset="uft-8">
+    <title>AB vision registeration form</title>
+    <script>
+        function validation()
+{
+    var First_name=document.getElementById("firstname").value;
+    var Middle_name=document.getElementById("middlename").value;
+    var Last_name=document.getElementById("lastname").value;
+    var Email_id=document.getElementById("email").value;
+    var Age=document.getElementById("age").value;
+    var Username=document.getElementById("EntrePassword").value;
+    var Password=document.getElementById("EntrePassword").value;
+    console.log(First_name)
+    function letters(str) {
+      return str.length === 1 && str.match(/[0-9]/i);
+    }
+    function validateEmail(email) {
+      const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+      return re.test(String(email).toLowerCase());
+  }
+    if(letters(firstname))
+    {alert("SHOULD BE A CHARACTER");
+      console.log(!letters(firstname))}
+    
+      else if(letters(middlename))
+    {alert("SHOULD BE A CHARACTER")}
+  
+    else if(letters(lastname))
+    {alert("SHOULD BE A CHARACTER")}
+
+    else if (!validateEmail(Email_id))
+	{alert('Invalid email')}
+
+    else
+    {alert("registeration successful")}
+}
+    </script>
+    <style>
+        body{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    background-image: url(background.jpg);
+    background-size: cover;
+}
+.Register{
+    width: 300px;
+    padding: 30px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background:rgb(104, 32, 32);
+    text-align: center;
+}
+.Register h1
+{
+    color: rgb(26, 24, 24);
+    text-transform: uppercase;
+    font-weight: 700;
+}
+.Register input[type="text"],.Register input[type="password"]
+{
+    border: 0;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 3px solid #121213;
+    padding: 14px 10px ;
+    width: 220px;
+    outline: none;
+    color: rgb(17, 17, 17);
+    border-radius: 24px;
+    transition: 0.25px;
+}
+.Register input[type="text"]:focus,.Register input[type="password"]:focus
+{
+    width: 270px;
+    border-color: rgb(29, 17, 17);
+}
+.Register input[type="button"]
+{
+    border: 0;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 3px solid #202220;
+    padding: 14px 35px ;
+    outline: none;
+    color: #131413;
+    border-radius: 24px;
+    transition: 0.25px;
+    cursor: pointer;
+}
+.Register input[type="button"]:hover
+{
+    background-color:rgb(0, 0, 0);
+    border-color: rgb(26, 25, 24);
+    color: rgb(19, 18, 18);
+}
+    </style>
+
+</head>
+<body>
+<form class="Register">
+<h1>REGRISTRATION FORM</h1>
+<input type="text" required="required" size="15" placeholder="First Name" id="firstname" maxlength="30" />
+<input type="text" required="required" size="15" placeholder="Middle Name" id="middlename" maxlength="30" />
+<input type="text" required="required" size="15" placeholder="Last Name" id="lastname" maxlength="30" /> 
+<input type="text" required="required" size="15" placeholder="Email_ID" id="email" maxlength="30" /> 
+<input type="text" required="required" size="15" placeholder="Age" id="age" maxlength="2" />
+<input type="password" required="required" size="15"placeholder=" Password" id="EntrePassword" maxlength="30">
+<input type="password" required="required" size="15"placeholder="  Confirm Password" id="EntrePassword" maxlength="30">
+<input type="button" onclick="validation()" size="15" value="SIGN UP">
+</form>
+</body>
+</html>
